@@ -1,0 +1,7 @@
+<div *ngIf="loading$ | async">Loading...</div>
+<div *ngIf="error$ | async">Error :(</div>
+<div *ngIf="books$ | async as books">
+    <div *ngFor="let book of books">
+        <p>{{ book.title }}: x</p>
+    </div>
+</div>
