@@ -1,7 +1,27 @@
+<h1>Showing here a collection of Book Titles</h1>
+
 <div *ngIf="loading$ | async">Loading...</div>
 <div *ngIf="error$ | async">Error :(</div>
-<div *ngIf="books$ | async as books">
-    <div *ngFor="let book of books">
-        <p>{{ book.title }}: x</p>
-    </div>
-</div>
+<table *ngIf="books$ | async as books">
+    <thead>
+    <tr>
+        <th>Book Id</th>
+        <th>Name</th>
+        <th>Author</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books">
+        <td>
+            <p>{{ book.id }}</p>
+        </td>
+        <td>
+            <p>{{ book.title }}</p>
+        </td>
+        <td>
+            <p>{{ book.author }}</p>
+        </td>
+    </tr>
+
+    </tbody>
+</table>

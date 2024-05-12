@@ -21,6 +21,7 @@ export class ProductsDataService {
     .watchQuery({ query : gql`
           {
             books {
+              id
               title
               author
             }
